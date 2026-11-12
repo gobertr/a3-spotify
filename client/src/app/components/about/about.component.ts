@@ -21,10 +21,14 @@ export class AboutComponent implements OnInit {
   getAboutMe() {
     
     this.service.aboutMe().then((data) => {
+      console.log(data);
+
       this.name = data.name
       this.profile_pic = data.imageURL
       this.profile_link = data.spotifyProfile;
     });
+
+    
   }
 
    /*TODO: create a function which gets the "about me" information from Spotify when the button in the view is clicked.
