@@ -10,7 +10,13 @@
 <!--TODO: Call search function when the button is clicked-->
 <button class="btn btn-light" (click)="search()">Search</button>
 <!--TODO: Display a carousel component if searching for an artist or album. Bind carousel's resources and give it a static carouselId.-->
+@if (searchCategory == 'artist' || searchCategory == 'album') {
 <app-carousel [resources]="resources" carouselId="carousel">
-
 </app-carousel>
+} 
+
+@if (searchCategory == 'track') {
+<app-track-list [tracks]="track-list">
+</app-track-list>
+}
 <!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
